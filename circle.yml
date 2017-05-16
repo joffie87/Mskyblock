@@ -1,0 +1,10 @@
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
+    - mvn install
+    - cp -r ./target/Mskyblock*.jar $CIRCLE_ARTIFACTS
+
+machine:
+  java:
+    version: oraclejdk8
